@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
+import HeroBg from '../src/assets/blue_bg.png';
 import {
   About,
   Contact,
@@ -14,7 +15,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div>
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+        <div>
           <Navbar />
           <Hero/>
           <Tech />
