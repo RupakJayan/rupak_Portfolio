@@ -1,5 +1,4 @@
 import { BrowserRouter } from "react-router-dom";
-import HeroBg from '../src/assets/blue_bg.png';
 import {
   About,
   Contact,
