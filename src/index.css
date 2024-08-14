@@ -11,6 +11,22 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+body {
+  -ms-overflow-style: none;
+}
+.h-96 {
+  height: 68rem /* 384px */;
+}
 * {
   margin: 0;
   padding: 0;
@@ -34,36 +50,16 @@ body {
   justify-content: center;
   height: 100vh;
   background: #282c34;
-  color: #fff;
+  color: #fdfdfd;
 }
 
 .hero-text {
   text-align: center;
   font-size: 2rem;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-text-fill-color: transparent;
 }
 
-.animated-text {
-  font-size: 2rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #ff6f61, #d85a8e, #f7b7a3);
-  background-size: 200% 200%;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: textGradient 5s ease infinite;
-}
-
-@keyframes textGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
