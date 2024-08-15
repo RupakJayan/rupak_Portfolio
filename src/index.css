@@ -18,9 +18,10 @@
 }
 
 .h-96 {
-  height: 800px;
+  height: 100rem;
 }
 * {
+  
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -60,6 +61,23 @@
 .twilight-gradient {
   background: linear-gradient(180deg, #6495ed, #483d8b);
 }
+/* Global or component-specific CSS */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  }
+}
+
+.shadow-glow {
+  animation: glow 1.5s infinite alternate;
+}
+
 
 .sunset-glow {
   background: linear-gradient(
@@ -79,7 +97,7 @@
 }
 
 .peachy-sunrise {
-  background: linear-gradient(180deg, #030858, #000000);
+  background: linear-gradient(180deg, #0919ff, #000000);
   background-size: 200% 200%;
   animation: gradientAnimation 15s ease infinite;
 }
@@ -89,16 +107,13 @@
 }
 
 .mystic-purple {
-  background: linear-gradient(180deg, #c3cfe2 0%, #c3cfe2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+  background: linear-gradient(180deg, #000102 0%, #09014e 50%, #000000 100%);
+  background-size: 200% 200%;
+  animation: gradientAnimation 15s ease infinite;
 }
 
-
 .tropical-sunset {
-  background: linear-gradient(180deg, #000000 0%, #9084ff 100%);
+  background: linear-gradient(180deg, #000000 0%, #08004d 100%);
 }
 
 .font-poppins {
@@ -126,9 +141,10 @@
 }
 
 .green-pink-gradient {
+  background: "#00cea8";
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
 }
-
 .orange-text-gradient {
   background: linear-gradient(to top, #f12711, #f5af19);
   -webkit-background-clip: text;

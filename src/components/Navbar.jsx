@@ -9,7 +9,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-5 top-0 z-20 peachy-sunrise`}>
+    <nav className={`${styles.paddingX} fixed w-full flex items-center py-1 z-20 mystic-purple bg-white/60 backdrop-blur-md`}>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"
@@ -47,10 +47,10 @@ const Navbar = () => {
         </div>
         <div
           className={`${
-            toggle ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
-          } p-6 black-gradient absolute top-20 mx-4 my-2 min-w-[14px] z-10 rounded-xl bg-primary transition-all duration-300 ease-in-out`}
+            toggle ? "opacity-100 " : "opacity-0 translate-x-full"
+          } p-6 black-gradient absolute top-32 mx-4 my-2 min-w-[140px] z-10 rounded-xl bg-primary transition-all duration-300 ease-in-out`}
         >
-          <ul className="list-none flex justify-end items-start flex-col gap-4">
+          <ul className="list-none flex items-start flex-col gap-3 ">
             {navLinks.map((link) => (
               <li
                 key={link.id}

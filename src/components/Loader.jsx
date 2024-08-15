@@ -1,9 +1,22 @@
-import React from 'react'
+import { Html, useProgress } from "@react-three/drei";
+import { HashLoader } from "react-spinners";
 
-const Loader = () => {
+const CanvasLoader = () => {
+  const { progress } = useProgress();
   return (
-    <div>Loader</div>
-  )
-}
+    <Html
+      as="div"
+      center
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
+      <HashLoader color="#ebbb00" size={50} />
+    </Html>
+  );
+};
 
-export default Loader
+export default CanvasLoader;

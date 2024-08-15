@@ -11,9 +11,10 @@ module.exports = {
         "black-100": "#100d25",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
+        "custom-dark": "#01000b", // Add this line for the custom background color
       },
       boxShadow: {
-        card: "0px 35px 120px -15px #211e35",
+        card: "10px 35px 120px -15px #080414",
       },
       screens: {
         xs: "450px",
