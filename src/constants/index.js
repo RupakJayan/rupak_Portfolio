@@ -15,156 +15,128 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
+  mern,
+  hackathon,
+  hotel,
+  portfolio,
+  security,
+  aiml,
+  volunteer,
 } from "../assets";
 
 export const navLinks = [
-  {
-    id: "about",
-    title: "About",
-  },
-  {
-    id: "work",
-    title: "Work",
-  },
-  {
-    id: "contact",
-    title: "Contact",
-  },
+  { id: "about", title: "About" },
+  { id: "work", title: "Work" },
+  { id: "contact", title: "Contact" },
 ];
 
 const services = [
-  {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "MERN Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Innovator",
-    icon: creator,
-  },
+  { title: "Web Developer", icon: web },
+  { title: "MERN Developer", icon: mobile },
+  { title: "Backend Developer", icon: backend },
+  { title: "Innovator", icon: creator },
 ];
 
 const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
+  { name: "HTML 5", icon: html },
+  { name: "CSS 3", icon: css },
+  { name: "JavaScript", icon: javascript },
+  { name: "TypeScript", icon: typescript },
+  { name: "React JS", icon: reactjs },
+  { name: "Redux Toolkit", icon: redux },
+  { name: "Tailwind CSS", icon: tailwind },
+  { name: "Node JS", icon: nodejs },
+  { name: "MongoDB", icon: mongodb },
+  { name: "Three JS", icon: threejs },
+  { name: "Git", icon: git },
+  { name: "Figma", icon: figma },
+  { name: "Docker", icon: docker },
 ];
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "MERN Full Stack Intern",
+    company_name: "Remote",
+    icon: mern,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jun 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed and deployed full-stack web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
+      "Implemented RESTful APIs and optimized database queries for efficient data retrieval.",
+      "Designed responsive UI components using React.js and Tailwind CSS.",
+      "Integrated authentication and authorization features using JWT and OAuth.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
+    title: "Competitive Coder",
+    company_name: "YANTRA'24: AlgoArena",
+    icon: hackathon,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "Mar 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Achieved a Top 5 finish in YANTRA’24: AlgoArena, a competitive coding event organized by The AI & ML Club – TAM, outperforming 100+ teams.",
+      "Solved complex algorithmic problems using Python and C++ under time constraints.",
+      "Collaborated with teammates to develop efficient solutions and optimize execution time.",
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
+    title: "Project Developer",
+    company_name: "Hotel Recommendation System",
+    icon: hotel,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "Completed",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Integrated maps to locate hotels based on 10,000+ user reviews, improving search efficiency by 40%.",
+      "Utilized Flask, Pandas, BeautifulSoup, NLTK, and Requests for data scraping and sentiment analysis.",
+      "Developed a dynamic and interactive front-end using React.js and Tailwind CSS.",
+    ],
+  },
+  {
+    title: "Portfolio Website Developer",
+    company_name: "Personal Project",
+    icon: portfolio,
+    iconBg: "#383E56",
+    date: "Completed",
+    points: [
+      "Designed a responsive personal portfolio website using React.js, Tailwind CSS, and JavaScript.",
+      "Showcased projects, skills, and experiences with interactive UI elements for enhanced user engagement.",
+      "Optimized performance by implementing lazy loading and efficient state management.",
+    ],
+  },
+  {
+    title: "Research & Development",
+    company_name:
+      "Lightweight Cryptography for Secure and Decentralized Data Storage",
+    icon: security,
+    iconBg: "#E6DEDD",
+    date: "Ongoing",
+    points: [
+      "Created a lightweight cryptographic framework using ChaCha20 encryption and dynamic key generation to enhance security in IoT networks.",
+      "Implemented tile-based image encryption, achieving 99.6% NPCR and passing NIST randomness tests for robustness.",
+      "Conducted in-depth research on blockchain-based decentralized data storage solutions.",
+    ],
+  },
+  {
+    title: "Senior Core Member",
+    company_name: "TAM (AI/ML) Club - VIT Vellore",
+    icon: aiml,
+    iconBg: "#383E56",
+    date: "Ongoing",
+    points: [
+      "Participated in AI/ML hackathons and workshops organized by the club.",
+      "Contributed to research discussions and knowledge-sharing sessions on AI and machine learning.",
+    ],
+  },
+  {
+    title: "Senior Core Member",
+    company_name: "Youth Red Cross Club - VIT Vellore",
+    icon: volunteer,
+    iconBg: "#E6DEDD",
+    date: "Ongoing",
+    points: [
+      "Donated blood as part of the club’s humanitarian initiatives.",
+      "Organized community service activities promoting social responsibility.",
     ],
   },
 ];
@@ -198,66 +170,40 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Hotel Recommendation System",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Integrated maps to locate hotels based on 10,000+ user reviews, improving search efficiency by 40%. Used sentiment analysis to enhance user experience.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      { name: "Flask", color: "blue-text-gradient" },
+      { name: "Pandas", color: "green-text-gradient" },
+      { name: "BeautifulSoup", color: "pink-text-gradient" },
+      { name: "NLTK", color: "yellow-text-gradient" },
     ],
-    image: carrent,
+    image: hotel,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "Portfolio Website",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Designed a responsive personal portfolio website using React.js, Tailwind CSS, and JavaScript. Showcased projects, skills, and experiences with interactive UI elements.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      { name: "React", color: "blue-text-gradient" },
+      { name: "Tailwind CSS", color: "green-text-gradient" },
+      { name: "JavaScript", color: "pink-text-gradient" },
     ],
-    image: jobit,
+    image: portfolio,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Lightweight Cryptography for Secure Data Storage",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Developed a cryptographic framework using ChaCha20 encryption and tile-based image encryption. Achieved 99.6% NPCR and passed NIST randomness tests for security.",
     tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      { name: "Cryptography", color: "blue-text-gradient" },
+      { name: "ChaCha20", color: "green-text-gradient" },
+      { name: "Blockchain", color: "pink-text-gradient" },
     ],
-    image: tripguide,
+    image: security,
     source_code_link: "https://github.com/",
   },
 ];
