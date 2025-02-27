@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import HeroVideo from "../assets/bg.mp4";
+import HeroImage from "../assets/herobg.png"; // Replace with your background image
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
@@ -21,21 +21,10 @@ const Hero = () => {
   });
 
   return (
-    <section className="relative w-full h-screen">
-      {/* Background video */}
-      <div className="absolute inset-0 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src={HeroVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
+    <section
+      className="relative w-full h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url(${HeroImage})` }}
+    >
       {/* Content wrapper */}
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
@@ -48,7 +37,7 @@ const Hero = () => {
         <div>
           <motion.h1
             className={`${styles.heroHeadText} text-white thin-text-head`}
-            style={{ fontSize: 'clamp(2rem, 5vw, 6rem)' }} // Fluid typography for heading
+            style={{ fontSize: "clamp(2rem, 5vw, 6rem)" }} // Fluid typography for heading
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -57,7 +46,7 @@ const Hero = () => {
           </motion.h1>
           <motion.span
             className={`${styles.heroSubText} mt-2 text-white-100 thin-text`}
-            style={{ fontSize: 'clamp(1rem, 3vw, 3rem)' }} // Fluid typography for subtext
+            style={{ fontSize: "clamp(1rem, 3vw, 3rem)" }} // Fluid typography for subtext
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
@@ -82,7 +71,6 @@ const Hero = () => {
         <a href="#about">
           <div className="w-[35px] h-[60px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
             <motion.div
-              style={{ backgroundColor: "white" }} // Temporary style for debugging
               animate={{ y: [0, 24, 0] }}
               transition={{
                 duration: 1.5,
