@@ -13,6 +13,7 @@ export default defineConfig({
     port: 3000, // Optional: Change dev server port
   },
   build: {
+    chunkSizeWarningLimit: 3000,
     outDir: "dist", // Ensure Vercel finds the output
     emptyOutDir: true, // Clears old builds
     rollupOptions: {
