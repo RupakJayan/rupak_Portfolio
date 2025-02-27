@@ -1,131 +1,53 @@
-import React, { Suspense, useEffect, useState, useRef } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import {
-  SpotLight,
-  useGLTF,
-  OrbitControls,
-  Preload,
-  useDepthBuffer,
-} from "@react-three/drei";
-import { Vector3 } from "three";
+import React, { Suspense, useEffect, useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+
 import CanvasLoader from "../Loader";
 
-// MovingSpot component for dynamic lighting
-function MovingSpot({ vec = new Vector3(), color = "white", ...props }) {
-  const light = useRef();
-  const { viewport } = useThree();
-
-  useFrame(({ mouse }) => {
-    if (light.current) {
-      light.current.target.position.lerp(
-        vec.set(
-          (mouse.x * viewport.width) / 2,
-          (mouse.y * viewport.height) / 2,
-          0
-        ),
-        0.1
-      );
-      light.current.target.updateMatrixWorld();
-    }
-  });
-
-  return (
-    <SpotLight
-      castShadow
-      ref={light}
-      penumbra={1}
-      distance={10}
-      angle={0.5}
-      attenuation={5}
-      anglePower={4}
-      intensity={2}
-      color={color}
-      {...props}
-    />
-  );
-}
-
-// Computers component with dynamic lighting
 const Computers = ({ isMobile }) => {
-  const { scene } = useGLTF("./desktop_pc/scene.gltf");
-
-  // This is a super cheap depth buffer that only renders once (frames: 1 is optional!)
-  const depthBuffer = useDepthBuffer({ frames: 1 });
+  const computer = useGLTF("./desktop_pc/scene.gltf");
 
   return (
     <mesh>
-      {/* Ambient Light for overall brightness */}
-      <ambientLight intensity={0.5} />
-
-      {/* Directional Light for simulating sunlight */}
-      <directionalLight
-        position={[5, 10, 5]}
-        intensity={0.7}
-        castShadow
-        shadow-mapSize={[2048, 2048]}
-      />
-
-      {/* Moving Spot Lights for dynamic lighting */}
-      <MovingSpot
-        depthBuffer={depthBuffer}
-        color="#ff0000" // Red
+      <hemisphereLight intensity={0.15} groundColor='black' />
+      <spotLight
         position={[-20, 50, 10]}
-        angle={0.15}
+        angle={0.12}
         penumbra={1}
-        intensity={2}
+        intensity={1}
         castShadow
         shadow-mapSize={1024}
-        distance={50}
       />
-      <MovingSpot
-        depthBuffer={depthBuffer}
-        color="#00ff00" // Green
-        position={[20, 50, -10]}
-        angle={0.15}
-        penumbra={1}
-        intensity={2}
-        castShadow
-        shadow-mapSize={1024}
-        distance={50}
-      />
-      <MovingSpot
-        depthBuffer={depthBuffer}
-        color="#0000ff" // Blue
-        position={[0, 50, 20]}
-        angle={0.15}
-        penumbra={1}
-        intensity={2}
-        castShadow
-        shadow-mapSize={1024}
-        distance={50}
-      />
-
-      {/* Additional Point Light for localized illumination */}
-      <pointLight position={[2, 3, 1]} intensity={1} distance={10} decay={2} />
-
+      <pointLight intensity={1} />
       <primitive
-        object={scene}
-        scale={isMobile ? 0.25 : 0.5}
-        position={isMobile ? [0, -0.25, -0.5] : [0, -3.2, -1]}
+        object={computer.scene}
+        scale={isMobile ? 0.7 : 0.75}
+        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
   );
 };
 
-// ComputersCanvas component
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
+
+    // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
 
+    // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
+    // Add the callback function as a listener for changes to the media query
     mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Remove the listener when the component is unmounted
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
@@ -133,7 +55,7 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      frameloop="demand"
+      frameloop='demand'
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
