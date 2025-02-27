@@ -1,35 +1,20 @@
 import { defineConfig } from "vite";
-import React from "react";
 import react from "@vitejs/plugin-react";
 
-import path from "path";
-
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "./",
+  server: {
+    port: 3000, // Change port if needed
+    open: true, // Automatically open the browser
+  },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), // Allows cleaner imports
+      "@": "/src", // Allows import shortcuts (e.g., import x from "@/components/X")
     },
-  },
-  server: {
-    port: 3000, // Optional: Change dev server port
   },
   build: {
-    chunkSizeWarningLimit: 3000,
-    outDir: "dist", // Ensure Vercel finds the output
-    emptyOutDir: true, // Clears old builds
-    rollupOptions: {
-      output: {
-        manualChunks: (id) => {
-          if (id.includes("node_modules")) {
-            if (id.includes("three") || id.includes("three-stdlib")) {
-              return "three"; // Separate Three.js
-            }
-            return "vendor"; // Code splitting for better performance
-          }
-        },
-      },
-    },
+    outDir: "dist",
+    chunkSizeWarningLimit: 1000, // Prevent warnings for large chunks
   },
 });
