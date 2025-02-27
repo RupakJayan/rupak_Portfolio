@@ -87,7 +87,7 @@ const Computers = ({ isMobile }) => {
   const { scene } = useGLTF("./desktop_pc/scene.gltf");
 
   // Optimize model scale for mobile
-  const modelScale = isMobile ? 0.5 : 0.75; // Use lower scale on mobile for performance
+  const modelScale = isMobile ? 0.1 : 0.75; // Use lower scale on mobile for performance
   const modelPosition = isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]; // Adjust position for mobile
 
   // Add a fallback if model loading fails (error handling)
