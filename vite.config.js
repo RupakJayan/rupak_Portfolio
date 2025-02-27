@@ -17,8 +17,11 @@ export default defineConfig({
     emptyOutDir: true, // Clears old builds
     rollupOptions: {
       output: {
-        manualChunks(id) {
+        manualChunks: (id) => {
           if (id.includes("node_modules")) {
+            if (id.includes("three") || id.includes("three-stdlib")) {
+              return "three"; // Separate Three.js
+            }
             return "vendor"; // Code splitting for better performance
           }
         },
