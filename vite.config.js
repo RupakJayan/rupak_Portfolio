@@ -9,11 +9,20 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"), // Allows cleaner imports
     },
   },
+  server: {
+    port: 3000, // Optional: Change dev server port
+  },
   build: {
     outDir: "dist", // Ensure Vercel finds the output
     emptyOutDir: true, // Clears old builds
-  },
-  server: {
-    port: 3000, // Optional: Change dev server port
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            return "vendor"; // Code splitting for better performance
+          }
+        },
+      },
+    },
   },
 });
