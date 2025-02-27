@@ -14,20 +14,7 @@ import CanvasLoader from "../Loader";
 function MovingSpot({ vec = new Vector3(), color = "white", ...props }) {
   const light = useRef();
   const { viewport } = useThree();
-
-  useFrame(({ mouse }) => {
-    if (light.current) {
-      light.current.target.position.lerp(
-        vec.set(
-          (mouse.x * viewport.width) / 2,
-          (mouse.y * viewport.height) / 2,
-          0
-        ),
-        0.1
-      );
-      light.current.target.updateMatrixWorld();
-    }
-  });
+  };
 
   return (
     <SpotLight
